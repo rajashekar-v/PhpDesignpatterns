@@ -14,8 +14,8 @@ $server->register("admin@example.com", "password");
 
 $middleware = new ThrottlingMiddleware(2);
 
-$middleware->linkWith(new UserExistMiddleware($server))->linkWith(new RoleCheckMiddleware())
-->linkWith(new RoleCheckMiddleware());
+$middleware->linkWith(new UserExistMiddleware($server))->linkWith(new RoleCheckMiddleware());
+
 
 $server->setMiddleware($middleware);
 

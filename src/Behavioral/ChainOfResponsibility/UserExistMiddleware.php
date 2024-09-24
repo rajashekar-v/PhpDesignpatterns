@@ -14,15 +14,15 @@ class UserExistMiddleware extends Middleware{
 
     public function check($email, $password)
     {
-        echo "Code in UserExistMiddleware \n";
+        
         if (!$this->server->hasEmail($email)) {
-            echo "UserExistsMiddleware: This email is not registered!\n";
+            echo "This email is not registered!\n";
 
             return false;
         }
 
         if (!$this->server->isValidPassword($email, $password)) {
-            echo "UserExistsMiddleware: Wrong password!\n";
+            echo "Wrong password!\n";
 
             return false;
         }

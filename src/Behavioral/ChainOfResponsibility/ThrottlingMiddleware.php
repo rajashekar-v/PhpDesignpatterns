@@ -18,7 +18,6 @@ class ThrottlingMiddleware extends Middleware{
 
     public function check($email, $password)
     {
-        echo "Code in ThrottlingMiddleware \n";
         if (time() > $this->currentTime + 60) {
             $this->request = 0;
             $this->currentTime = time();

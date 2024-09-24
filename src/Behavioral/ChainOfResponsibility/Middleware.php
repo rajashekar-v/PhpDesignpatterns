@@ -14,12 +14,10 @@ abstract class Middleware {
 
     public function check($email,$password){
 
-        echo "Code in Middleware \n";
         if(!$this->next)
         {
             return true;
         }
-
         return $this->next->check($email, $password);
         
     }
